@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>为什么app.locals定义的键值对能在模板中直接访问呢 | G Morning</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/gMorning/img/favicon.ico">
+    <meta name="description" content="G Morning的个人Blog">
+    <link rel="preload" href="/gMorning/assets/css/0.styles.133def84.css" as="style"><link rel="preload" href="/gMorning/assets/js/app.bf1d8ee4.js" as="script"><link rel="preload" href="/gMorning/assets/js/2.9037b1e9.js" as="script"><link rel="preload" href="/gMorning/assets/js/10.7ffb3af6.js" as="script"><link rel="prefetch" href="/gMorning/assets/js/11.ec71738f.js"><link rel="prefetch" href="/gMorning/assets/js/12.73279b57.js"><link rel="prefetch" href="/gMorning/assets/js/13.9f67bb7e.js"><link rel="prefetch" href="/gMorning/assets/js/14.e37057e6.js"><link rel="prefetch" href="/gMorning/assets/js/15.6ca022eb.js"><link rel="prefetch" href="/gMorning/assets/js/3.f44cd9f8.js"><link rel="prefetch" href="/gMorning/assets/js/4.b7e6892f.js"><link rel="prefetch" href="/gMorning/assets/js/5.37512a49.js"><link rel="prefetch" href="/gMorning/assets/js/6.634268f0.js"><link rel="prefetch" href="/gMorning/assets/js/7.28b61c40.js"><link rel="prefetch" href="/gMorning/assets/js/8.3d2170e6.js"><link rel="prefetch" href="/gMorning/assets/js/9.7581e205.js">
+    <link rel="stylesheet" href="/gMorning/assets/css/0.styles.133def84.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/gMorning/" class="home-link router-link-active"><img src="/gMorning/img/logo.jpg" alt="G Morning" class="logo"> <span class="site-name can-hide">G Morning</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/gMorning/FAQ/" class="nav-link router-link-exact-active router-link-active">
+  求索
+</a></div><div class="nav-item"><a href="/gMorning/Store/" class="nav-link">
+  仓库
+</a></div><div class="nav-item"><a href="/gMorning/Thought/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gMorning/language/chinese/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/gMorning/language/english/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/gMorning-Wp" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/gMorning/FAQ/" class="nav-link router-link-exact-active router-link-active">
+  求索
+</a></div><div class="nav-item"><a href="/gMorning/Store/" class="nav-link">
+  仓库
+</a></div><div class="nav-item"><a href="/gMorning/Thought/" class="nav-link">
+  随笔
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/gMorning/language/chinese/" class="nav-link">
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/gMorning/language/english/" class="nav-link">
+  English
+</a></li></ul></div></div> <a href="https://github.com/gMorning-Wp" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>消化堆</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/gMorning/FAQ/DigestionHeap/Digested.html" class="sidebar-link">消化过</a></li><li><a href="/gMorning/FAQ/DigestionHeap/Digesting.html" class="sidebar-link">消化中</a></li><li><a href="/gMorning/FAQ/DigestionHeap/DigestWill.html" class="sidebar-link">待消化</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>输出层</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/gMorning/FAQ/" class="active sidebar-link">百科首页</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h4 id="为什么app-locals定义的键值对能在模板中直接访问呢"><a href="#为什么app-locals定义的键值对能在模板中直接访问呢" class="header-anchor">#</a> 为什么app.locals定义的键值对能在模板中直接访问呢</h4> <hr> <p>不知道大家在使用express框架开发的过程中，有没有过这样的疑问，在app.locals这个对象字面量中定义的键值对，是可以直接在模板中使用的，就和res.render时开发者传入的模板渲染参数一样，那么为什么能这样操作呢，本文就是从源码角度浅析下这个问题。</p> <h4 id="res-render做了些什么"><a href="#res-render做了些什么" class="header-anchor">#</a> res.render做了些什么</h4> <p>其实要探讨大标题的问题，必须先弄明白，当我们在路由函数中使用：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>  res.render(view, data)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在服务端渲染输出页面的时候，express做了些什么。
+这本身就是一个很有意思的问题，因为，大部分Express开发者都遇到过如下二种写法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>res.render(view, data);
+res.render(view, data, (err, text)=&gt;if(!err)=&gt;res.send(text));
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>很有意思吧，也就是说，当我们调用res的render方法时，如果不传第三个回调函数，则render结束后将结果HTML自动发送给浏览器；如果我们传入第三个回调函数，则服务器端的render页面结果HTML字符串会以该回调函数的第二个参数的形式返回（上述代码样例中的text），此时何时返回调用<code>res.send</code>方法将HTML给浏览器由开发者自己决定。</p> <p>接下来我们就深入Express的源码来理解下，为什么可以这样进行编码。经过查阅express的源码，可以发现<code>res.render</code>方法最终是在<code>express/lib/response.js</code>中实现的。至于在形如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>app.get(‘/index’, (req, res, next)=&gt;res.render(‘index’))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>的常规路由函数中，初始的http服务器处理句柄中传入的原始req和res何时被express自动包装，提供了诸如<code>res.send()</code>, res.json()等方法调用链，这里只提供大略的源码路线，不作详细展开：其实此处大家可以自己看<code>lib/application.js</code>，从第一个中间件加载开始（或者没有中间件，直接开始加载路由），都会执行一个lazyrouter方法，那么原始的req和res正是在这里使用原型链赋值的方式进行初始化包装了express提供的
+<code>lib/request.js</code>和<code>lib/response.js</code>方法的。
+有点扯远了，回归正途，首先贴一下<code>res.render</code>的精简后的源码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function render(view, options, callback) {
+	var app = this.req.app;
+	var done = callback;
+	var opts = options || {};
+	var req = this.req;
+	var self = this;
+	done = done || function (err, str) {
+		if (err) return req.next(err);
+		self.send(str);
+	};
+	app.render(view, opts, done);
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>这段代码非常容易理解，也解释了本节最开始提出的问题，两种写法都支持的原因，就是：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var done = callback;
+done = done || function (err, str) {
+	if (err) return req.next(err);
+	self.send(str);
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>显然，如果用户传入了回调函数，则done就是用户传入的回调函数，如果用户没有传入回调函数，则express框架自动给你添加了一个渲染完成没有错误自动将渲染后的HTML返回给浏览器的回调函数，当然这个自动添加的回调函数也提供了简单的异常处理，比如渲染出错，就走next(err)，返回500给浏览器。
+接下来就是</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var app = this.req.app;
+app.render(view, opts, done);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>这里的app可以通过<code>this.req.app</code>来获取来获取的原因，就是上面提到的原始req和res在lazyrouter中进行了一系列初始化的结果，具体不展开了。而得到的app，就是原始的express生成的app。
+所以，<code>res.render</code>方法，最终调用的就是<code>app.render</code>方法，并且传入了三个参数<code>view</code>，<code>opts</code>，<code>done</code>。其中view依旧是模板路径，opts则是渲染该模板传入的参数，最后的done就是回调函数。</p> <h4 id="app-render"><a href="#app-render" class="header-anchor">#</a> app.render</h4> <p>上面一节分析了这么多，其实正主在这里。我们可以看到，最终所有的render方法，收口的地方在<code>app.render</code>函数中。这个函数也能找到本文的主题：<code>app.locals</code>中定义的键值对为何能在模板中直接使用，真正原因。
+核心的代码如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function render(name, options, callback) {
+	…
+	var renderOptions = {};
+	var opts = options;
+	…
+	merge(renderOptions, this.locals);
+	if (opts._locals) {
+    		merge(renderOptions, opts._locals);
+	}
+	merge(renderOptions, opts);
+	…
+	tryRender(view, renderOptions, done);
+}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>我把和大标题无关的view生成代码都去掉了，可以看到，最后调用tryRender方法进行渲染传入的参数renderOptions，其实是由<code>app.locals</code>，<code>options._locals</code>(如果存在的话)和真正的由开发者传入的渲染页面所需要的参数options，这三者merge而成的。
+那么在模板中，真正输出给模板的参数是这个包含上述三者的renderOptions，故而，我们可以在模板中和调用自己传入参数一样的方式，直接调用<code>app.locals</code>中定义的键值对。</p> <h4 id="结语"><a href="#结语" class="header-anchor">#</a> 结语</h4> <p>存储在app.locals中的这些键值对一般是公共模板方法或者公共模板变量，express提供了这样的机制，便于公共数据和方法在模板中的使用，而无需每次render手动传入，这种思想值得我们设计代码框架时学习。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/gMorning-Wp/gMorningBlogCode.git/edit/master/docs/FAQ/README.md" target="_blank" rel="noopener noreferrer">博主通道__GitHub Private Repo ！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/25/2020, 8:22:42 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/gMorning/FAQ/Console/A002.html" class="prev">
+        #A002_插件清单
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/gMorning/assets/js/app.bf1d8ee4.js" defer></script><script src="/gMorning/assets/js/2.9037b1e9.js" defer></script><script src="/gMorning/assets/js/10.7ffb3af6.js" defer></script>
+  </body>
+</html>
